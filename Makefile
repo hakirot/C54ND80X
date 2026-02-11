@@ -1,5 +1,8 @@
 CFLAGS=-I -Wall -g -lncurses  -Wimplicit-function-declaration
 
+calc: option_calc.c
+	gcc option_calc.c -o calc $(CFLAGS)
+
 proc_overwrite: proc_overwrite.c
 	gcc proc_overwrite.c -o proc_overwrite
  
@@ -8,9 +11,6 @@ string_truths: string_truths.c
 
 errno: errno.c
 	gcc errno.c -o errno
-
-calc: option_calc.c
-	gcc option_calc.c -o calc $(CFLAGS)
 
 thing: thing.c
 	gcc thing.c -o thing

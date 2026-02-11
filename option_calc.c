@@ -29,7 +29,7 @@ struct Option {
 void error(char * err);
 struct Option *init_list();
 int is_char_in_search(char * search_str);
-void cleanup(struct Option * list);
+struct Option * cleanup(struct Option * list);
 void print_list(struct Option * list);
 
 int main(int argc, char* argv[]) {
@@ -71,11 +71,11 @@ int main(int argc, char* argv[]) {
   int total = 0;
   while(1){
 
-    // exit on resize
     getmaxyx(stdscr, row, col);
     if(cache != row + col){
       clear();
       print_list(list);
+      cache = row + col;
     }
 
     input = getch();
@@ -208,8 +208,15 @@ struct Option * init_list() {
   return head;
 }
 
-void cleanup(struct Option * list) {
-
+struct Option* cleanup(struct Option * list) {
+  struct Option * iterator = list;
+  while(iterator != NULL){
+    struct Option * temp = iterator;
+    iterator = iterator->next;
+    free(temp);
+  }
+  list = NULL;
+  return list;
 }
 
 int is_char_in_search(char * search_str) {
