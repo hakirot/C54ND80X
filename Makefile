@@ -1,5 +1,8 @@
 CFLAGS=-I -Wall -g -lncurses  -Wimplicit-function-declaration
 
+ueberzug: ueberzug.c
+	gcc ueberzug.c -o ueberzug $(CFLAGS)
+
 calc: option_calc.c
 	gcc option_calc.c -o calc $(CFLAGS)
 
