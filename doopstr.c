@@ -7,14 +7,14 @@ int is_char_in_list(char i, char* list);
 int main(int argc, char* argv[]) {
 
   if (argc != 2) {
-    perror("no\n");
+    perror("Input a string\n");
     exit(1);
   }
 
   char * str = argv[1];
 //printf("%s\n", str);
 
-  char list[100] = {'\0'};
+  char list[256] = {'\0'};
 
   for (int i = 0; i < strlen(str); i++){
     if(!is_char_in_list(str[i], list)){
