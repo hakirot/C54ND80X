@@ -1,5 +1,8 @@
 CFLAGS=-I -Wall -g -lncurses  -Wimplicit-function-declaration
 
+string_sizes: string_sizes.c
+	gcc string_sizes.c -o string_sizes $(CFLAGS)
+
 ueberzug: ueberzug.c
 	gcc ueberzug.c -o ueberzug $(CFLAGS)
 
