@@ -1,4 +1,7 @@
 CFLAGS=-I -Wall -g -lncurses  -Wimplicit-function-declaration
+BIN=string_sizes ueberzug calc proc_overwrite string_truths errno thing
+
+all: $(BIN)
 
 string_sizes: string_sizes.c
 	gcc string_sizes.c -o string_sizes $(CFLAGS)
@@ -21,11 +24,5 @@ errno: errno.c
 thing: thing.c
 	gcc thing.c -o thing
 
-mod: mod.c
-	gcc mod.c -o mod
-
-doop: doopstr.c
-	gcc doopstr.c -o doopstr
-
-main: main.c
-	gcc main.c -o main
+clean:
+	rm $(BIN)
