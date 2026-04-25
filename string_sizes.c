@@ -1,8 +1,26 @@
 #include <stdio.h>
+#include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>
 #include <locale.h>
 #include <wchar.h>
+
+static const char * im[] = {
+  "╔══════╗    ╔════╗    ╔═════╗     ╔════╗    ",
+  "║ ╔════╝   ╔╝╔══╗╚╗   ║ ╔══╗╚╗   ╔╝╔══╗╚╗   ",
+  "║ ╚════╗   ║ ╚══╝ ║   ║ ╚══╝╔╝   ║ ╚══╝ ║   ",
+  "╚════╗ ║   ║ ╔══╗ ║   ║ ╔══╗╚╗   ║ ╔══╗ ║   ",
+  "╔════╝ ║╔═╗║ ║  ║ ║╔═╗║ ║  ║ ║╔═╗║ ║  ║ ║╔═╗",
+  "╚══════╝╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═╝╚═╝",
+};
+/* Set empty if desired */
+//static const char * im[] = {NULL};
+
+static const char hd[] = "herro";
+//static const char hd[] = {'\0'};
+
+int IM_SET;
+int HD_SET;
 
 const char * bg[] = {
   "                     -`                     ",
@@ -51,6 +69,10 @@ int main(int argc, char* argv[]) {
 
   int FG_GLYPH_LENGTH = sizeof(fg)/sizeof(fg[0]);
   printf("FG height: %d\n", FG_GLYPH_LENGTH);
+
+//if(im[0] != NULL) IM_SET = true;
+  im[0] == NULL ?  printf("true\n") : printf("false\n");
+  hd[0] != 0 ? printf("hd true\n") : printf("hd false\n");
 
   return 0;
 }
