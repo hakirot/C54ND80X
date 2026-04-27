@@ -1,7 +1,10 @@
 CFLAGS=-I -Wall -g -lncurses  -Wimplicit-function-declaration
-BIN=string_sizes ueberzug calc proc_overwrite string_truths errno thing
+BIN=string_sizes ueberzug calc proc_overwrite string_truths errno thing ncurses_color_test
 
 all: $(BIN)
+
+ncurses_color_test: ncurses_color_test.c
+	gcc ncurses_color_test.c -o ncurses_color_test $(CFLAGS) -lncursesw -DNCURSES_WIDECHAR=1
 
 string_sizes: string_sizes.c
 	gcc string_sizes.c -o string_sizes $(CFLAGS)

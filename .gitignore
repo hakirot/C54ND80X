@@ -7,3 +7,4 @@ calc
 proc_overwrite
 ueberzug
 string_sizes
+ncurses_color_test
