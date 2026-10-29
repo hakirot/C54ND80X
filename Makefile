@@ -1,7 +1,13 @@
 CFLAGS=-I -Wall -g -lncurses  -Wimplicit-function-declaration
-BIN=string_sizes ueberzug calc proc_overwrite string_truths errno thing ncurses_color_test rand_string
+BIN=string_sizes ueberzug calc proc_overwrite string_truths errno thing ncurses_color_test rand_string viz dyn_arr
 
 all: $(BIN)
+
+viz: viz.c
+	gcc viz.c -o viz $(CFLAGS)
+
+dyn_arr: dyn_arr.c
+	gcc dyn_arr.c -o dyn_arr $(CFLAGS)
 
 rand_string: rand_strings.c
 	gcc rand_strings.c -o rand_string $(CFLAGS)
